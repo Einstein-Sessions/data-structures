@@ -1,6 +1,6 @@
 package com.javasessions.stack;
 
-public class BasicStack<T> {
+public class BasicStack<T> implements StackInterface<T> {
     private T [] data;
     private int stackPointer;
 
@@ -9,20 +9,10 @@ public class BasicStack<T> {
         stackPointer = 0;
     }
 
-    /**
-     *
-     * @param newItem - to be pushed on top of the stack.
-     */
     public void push(T newItem) {
         data[stackPointer++] = newItem;
     }
 
-    /**
-     * Removes the element on top of the stack.
-     *
-     * @return - the new stack without the element removed element
-     * at the top of the stack
-     */
     public T pop() {
         if (stackPointer == 0) {
             throw new IllegalStateException("No More Items on the Stack");

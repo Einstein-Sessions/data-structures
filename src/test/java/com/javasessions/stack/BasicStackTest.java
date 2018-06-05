@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 
 public class BasicStackTest {
 
-    private BasicStack<String> cardDeck;
+    private StackInterface<String> cardDeck;
 
     @Before
     public void init() {

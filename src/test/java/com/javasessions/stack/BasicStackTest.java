@@ -3,8 +3,9 @@ package com.javasessions.stack;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.NoSuchElementException;
+
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 
 public class BasicStackTest {
@@ -13,7 +14,7 @@ public class BasicStackTest {
 
     @Before
     public void init() {
-        cardDeck = new BasicStack<String>();
+        cardDeck = new ListStack<>();
         cardDeck.push("Ace");
         cardDeck.push("King of Hearts");
         cardDeck.push("Queen of Spades");
@@ -38,7 +39,6 @@ public class BasicStackTest {
     public void should_return_new_card_added_to_card_deck() {
         cardDeck.push("Jack of Spades");
         assertEquals(8, cardDeck.size());
-        assertTrue(cardDeck.contains("Jack of Spades"));
     }
 
     @Test
@@ -48,7 +48,7 @@ public class BasicStackTest {
         assertEquals(expected, card);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = NoSuchElementException.class)
     public void should_throw_exception_when_no_card_is_found(){
         String expected = "Ace of Diamonds";
         String card = cardDeck.access("Ace of Diamonds");

@@ -11,12 +11,22 @@
 card in the deck. However, if someone wants remove a card from the deck, they would have to 
 remove the first card at the top of the deck/stack which is the _Queen of hearts_.
 
-### Push and Pop
+## Push and Pop
 * There are terms used within the _Stack_ data structure:
     * _Push_ -> To place an element at the _end/top_ of the stack.
     * Pop -> To remove an element at the _end/top_ of the stack.
-### Big O of a Stack
+## Big O of a Stack
 * Push -> O(1).
 * Pop -> O(1).
 * Search -> O(n), since you have to go through each element one by one until you find the right element.
 * Access -> O(n), performs a search and then alters your data structure as it will _pop_ all elements before the accessed element.
+
+## Core Java Stacks
+
+* Java provides the _[Stack<E>](https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html)_ interface.
+* Uses the `Vector` as the underlying stack structure.
+    * This is a synchronized class.
+    * This makes the stack thread safe but comes at a performance cost.
+* For backwards compatability they created a _[Deque<E>](https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html)_.
+* This supports all the core stack features and then some.
+* If you want to get a non-thread safe stack, you can use the `ArrayDeque` implementation of this interface.
